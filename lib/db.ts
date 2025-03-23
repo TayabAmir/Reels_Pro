@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/express-ts";
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/reelspro";
 
 if (!MONGODB_URL) {
     throw new Error("Please provide a MongoDB URL");
@@ -21,7 +21,6 @@ export async function connectToDatabase() {
         const opts = {
             bufferCommands: true,
             maxPoolSize: 10,
-            bufferMaxEntries: 0,
             useNewUrlParser: true,
             useUnifiedTopology: true,
         };
