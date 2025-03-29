@@ -4,6 +4,7 @@ import { ImageKitProvider } from "imagekitio-next";
 import { SessionProvider } from "next-auth/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Header from "./Header";
 
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
@@ -32,6 +33,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         <SessionProvider>
             <ImageKitProvider urlEndpoint={urlEndpoint} publicKey={publicKey} authenticator={authenticator}>
                 <ToastContainer position="bottom-right" autoClose={3000} />
+                <Header />
+
                 {children}
             </ImageKitProvider>
         </SessionProvider>

@@ -32,7 +32,8 @@ class APIClient {
     }
 
     async getVideos(){
-        return this.Fetch<IVideo[]>("videos")
+        const res = await this.Fetch<IVideo[]>("videos")
+        return res
     }
 
     async getVideo(id : string){

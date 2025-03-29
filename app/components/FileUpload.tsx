@@ -69,10 +69,12 @@ export default function FileIUpload({
     <div className="space-y-2">
       
       <IKUpload
-        fileName="test-upload.jpg"
+        fileName={fileType === "image" ? "image" : "video"}
         useUniqueFileName={true}
         validateFile={validateFile}
-        folder={fileType === "video" ? "/videos" : "image"}
+        accept={fileType === "video" ? "video/*" : "image/*"}
+        folder={fileType === "video" ? "/videos" : "/images"}
+        className="file-input file-input-bordered w-full"
         onError={onError}
         onSuccess={handleSuccess}
         onUploadProgress={handleProgress}

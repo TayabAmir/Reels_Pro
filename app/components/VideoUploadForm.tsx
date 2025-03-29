@@ -70,7 +70,7 @@ export default function VideoUploadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6  ">
       <div className="form-control">
         <label className="label">Title</label>
         <input
